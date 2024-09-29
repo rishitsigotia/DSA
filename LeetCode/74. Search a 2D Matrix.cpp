@@ -28,3 +28,7 @@ bool searchMatrix(vector<vector<int>>& matrix, int target)
         return false;
 
 }
+Time Complexity: O(log(NxM)), where N = given row number, M = given column number.
+Reason: We are applying binary search on the imaginary 1D array of size NxM.
+
+Space Complexity: O(1) as we are not using any extra space.
