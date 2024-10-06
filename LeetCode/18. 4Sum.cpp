@@ -1,3 +1,4 @@
+///Optimal method 
 vector<vector<int>> fourSum(vector<int>& num, int target) {
         
         vector<vector<int> > res;
