@@ -1,4 +1,4 @@
-    
+Problem Link: https://bit.ly/3jLfElm
 int subarraysWithXorK(vector<int> a, int k) {
     int n = a.size(); //size of the given array.
     int xr = 0;
