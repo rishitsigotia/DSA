@@ -20,7 +20,9 @@ int lengthOfLongestSubstring(string s)
     }
     return ans;
 }
+Time Complexity: O( 2*N ) (sometimes left and right both have to travel a complete array)
 
+Space Complexity: O(N) where N is the size of HashSet taken for storing the elements
 /// Optimal solution
 /// moving left to right instead of poping
 /// using map instead of set, storing index also.
@@ -41,3 +43,7 @@ int lengthOfLongestSubstring(string s) {
         }
         return ans;
     }
+
+Time Complexity: O( N )
+
+Space Complexity: O(N) where N represents the size of HashSet where we are storing our elements
