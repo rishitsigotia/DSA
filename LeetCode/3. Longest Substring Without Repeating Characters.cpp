@@ -21,3 +21,23 @@ int lengthOfLongestSubstring(string s)
     return ans;
 }
 
+/// Optimal solution
+/// moving left to right instead of poping
+/// using map instead of set, storing index also.
+int lengthOfLongestSubstring(string s) {
+        int n = s.length();
+        int left = 0 , right =0;
+        map<int,int>mp;
+        int ans = 0;
+        while(right < n)
+        {
+            if(mp.find(s[right]) != mp.end())
+            {
+                left = max(mp[s[right]] + 1 , left); 
+            }
+            mp[s[right]] = right;
+            ans = max(ans,right - left +1);
+            right++;
+        }
+        return ans;
+    }
