@@ -85,3 +85,32 @@ ListNode *getIntersectionNode(ListNode *head1, ListNode *head2)
     //intersection is not present between the lists return null
     return NULL;
 }
+Time Complexity: O(m*n)
+
+Reason: For each node in list 2 entire lists 1 are iterated. 
+
+Space Complexity: O(1)
+
+Reason: No extra space is used.
+
+//Better Approach
+ListNode *getIntersectionNode(ListNode *head1, ListNode *head2)
+{
+    unordered_set<node*> st;
+    while(head1 != NULL) {
+       st.insert(head1);
+       head1 = head1->next;
+    }
+    while(head2 != NULL) {
+        if(st.find(head2) != st.end()) return head2;
+        head2 = head2->next;
+    }
+    return NULL;
+}
+Time Complexity: O(n+m)
+
+Reason: Iterating through list 1 first takes O(n), then iterating through list 2 takes O(m). 
+
+Space Complexity: O(n)
+
+Reason: Storing list 1 node addresses in unordered_set.
