@@ -16,6 +16,11 @@ ListNode *getIntersectionNode(ListNode *headA, ListNode *headB)
     }
     return d1;
 }
+Time Complexity: O(2*max(length of list1,length of list2))
+
+Reason: Uses the same concept of the difference of lengths of two lists.
+
+Space Complexity: O(1)
 
 // Second optimal approach same TC but longer code
 ListNode *getIntersectionNode(ListNode *headA, ListNode *headB)
