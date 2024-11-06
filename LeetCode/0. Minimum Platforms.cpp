@@ -24,3 +24,7 @@ int findPlatform(vector<int>& arr, vector<int>& dep)
        return max_count;
        
 }
+
+Time Complexity: O(nlogn) Sorting takes O(nlogn) and traversal of arrays takes O(n) so overall time complexity is O(nlogn).
+
+Space complexity: O(1)  (No extra space used).
