@@ -71,3 +71,56 @@ public:
         return true;
     }
 };
+
+
+1. Time Complexity (TC)
+The time complexity is determined by:
+
+Visiting every node once (O(n))
+
+Traversing every edge once (O(e), where e is the number of edges)
+
+Breakdown:
+Building the adjacency list (adj):
+
+Iterating over prerequisites (which has e edges) → O(e)
+
+DFS traversal (checkCycleDFS):
+
+Each node is visited exactly once (O(n))
+
+Each edge is traversed once (O(e))
+
+Total DFS time → O(n + e)
+
+Final TC:
+Worst Case: O(n + e)
+
+If the graph is dense (e ≈ n²), it becomes O(n²).
+
+But typically, in course scheduling, e is proportional to n, so O(n + e) ≈ O(n) in practice.
+
+2. Space Complexity (SC)
+The space complexity is determined by:
+
+Adjacency list (O(n + e))
+
+Visited and recursion stack trackers (O(n))
+
+Recursion call stack (O(n) in worst case)
+
+Breakdown:
+Adjacency List (adj):
+
+Stores n nodes and e edges → O(n + e)
+
+Visited & inRec arrays:
+
+Two boolean arrays of size n → O(2n) ≈ O(n)
+
+Recursion Stack (DFS depth):
+
+In the worst case (a straight-line graph), recursion depth is n → O(n)
+
+Final SC:
+Total: O(n + e) (dominated by adjacency list)
