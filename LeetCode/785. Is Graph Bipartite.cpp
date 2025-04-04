@@ -14,16 +14,49 @@ public:
         }
         return true;
     }
+    bool BFS(vector<vector<int>>& adj,vector<int>&color, int u , int currColor)
+    {
+        queue<int>que;
+        que.push(u);
+        color[u] = currColor;
+
+        while(!que.empty())
+        {
+            int front = que.front();
+            que.pop();
+
+            for(int &v: adj[front])
+            {
+                if(color[v] == color[front])
+                    return false;
+                
+                if(color[v] == -1)
+                {
+                    color[v] = 1-color[front];
+                    que.push(v);
+                }
+            }
+        }
+        return true;
+    }
     bool isBipartite(vector<vector<int>>& graph) {
         int n = graph.size();
 
         vector<int>color(n,-1);
+        //DFS Approach
+        // for(int i = 0 ; i < n ;i++)
+        // {
+        //     if(color[i] == -1 && DFS(graph,color,i,1) == false) // 1 -> Red , 0 -> Green assumption
+        //         return false;
+        // }
 
-        for(int i = 0 ; i < n ;i++)
+        //BFS Approach
+        for(int i = 0 ; i<n;i++)
         {
-            if(color[i] == -1 && DFS(graph,color,i,1) == false) // 1 -> Red , 0 -> Green assumption
+            if(color[i] == -1 && BFS(graph,color,i,1) == false)
                 return false;
         }
+
         return true;
     }
 };
