@@ -55,3 +55,15 @@ class Solution {
             return result;
         }
     };
+
+
+Time Complexity:
+The time complexity of the provided solution is O(n² log n), where n is the number of points. This arises because:
+
+Adjacency List Construction: O(n²) to compute and store all pairwise distances.
+
+Prim's Algorithm with Priority Queue: Each edge (O(n²) total) is processed once, and each heap operation (insert/extract-min) takes O(log n) time, leading to O(n² log n) for this phase.
+
+Space Complexity:
+The space complexity is O(n²) due to storing the adjacency list for a complete graph.
+
