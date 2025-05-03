@@ -67,3 +67,21 @@ Prim's Algorithm with Priority Queue: Each edge (O(n²) total) is processed once
 Space Complexity:
 The space complexity is O(n²) due to storing the adjacency list for a complete graph.
 
+
+
+Follow-Up Interview Questions:
+
+1.Why use Prim's algorithm instead of Kruskal's here?
+    Prim's is efficient for dense graphs (like this complete graph). Kruskal's has similar asymptotic complexity here (O(n² log n)) but may perform worse due to sorting all edges.
+
+2.How can you optimize Prim's algorithm for this problem?
+    Use the "array-based" Prim's (without a heap). Maintain an array to track minimum distances to the MST, reducing time complexity to O(n²) for dense graphs.
+
+3.What if n is very large (e.g., 10⁵ points)?
+    The current approach becomes infeasible. Alternative methods leveraging geometric properties (e.g., Delaunay triangulation for Manhattan distance) would be needed, though this is a more advanced topic.
+
+4.How does the Manhattan distance affect the MST compared to Euclidean?
+    The MST structure depends on the distance metric. Manhattan distance uses grid-like paths, leading to different edge weights and potentially a different MST compared to Euclidean.
+
+5.Explain the role of the priority queue in Prim's algorithm.
+    It efficiently selects the next closest node to the MST. The min-heap ensures we always pick the edge with the smallest weight connecting the MST to non-MST nodes.
