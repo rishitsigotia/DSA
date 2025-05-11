@@ -76,3 +76,33 @@ class Solution {
           
       }
   };
+
+
+Where Is This Useful?
+1. Deadlock Detection in Operating Systems
+In resource allocation graphs, cycles (strongly connected components) can indicate potential deadlocks.
+
+Kosaraju helps detect such cycles efficiently.
+
+2. Optimizing Compilers
+In compiler optimization (e.g., control flow graphs), SCCs help identify loops and invariant code motion.
+
+These are crucial for improving runtime performance.
+
+3. Software Package Management / Build Systems
+In package dependencies or build pipelines, SCCs help detect circular dependencies.
+
+You can’t build A without B and B without A → SCC shows the cycle clearly.
+
+4. Social Network Analysis
+In following/friend graphs (like on Twitter), SCCs can show communities where everyone interacts with each other.
+
+Example: a group of users where everyone follows everyone else.
+
+5. Web Crawling / Page Ranking
+Web pages can be modeled as a directed graph of links.
+
+Finding SCCs helps identify clusters of related or interlinked pages.
+
+6. Model Checking / Static Analysis
+In formal verification or static analysis of programs, control and data flow graphs are analyzed for loops, which often form SCCs.
