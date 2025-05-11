@@ -106,3 +106,28 @@ Finding SCCs helps identify clusters of related or interlinked pages.
 
 6. Model Checking / Static Analysis
 In formal verification or static analysis of programs, control and data flow graphs are analyzed for loops, which often form SCCs.
+
+
+
+
+⏱️ Time Complexity of Kosaraju's Algorithm
+The time complexity of Kosaraju’s Algorithm is:
+
+O(V + E),
+where:
+
+V = number of vertices (nodes)
+
+E = number of edges
+
+🔍 Why O(V + E)?
+Kosaraju has three main steps:
+
+First DFS (on original graph) — to record finishing times:
+✅ Visits every node and edge once → O(V + E)
+
+Transpose the graph (reverse all edges):
+✅ Visit each edge once and reverse it → O(E)
+
+Second DFS (on transposed graph) — using the stack order:
+✅ Again, visits every node and edge once → O(V + E)
