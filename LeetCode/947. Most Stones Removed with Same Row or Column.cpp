@@ -47,7 +47,7 @@ public:
     int removeStones(vector<vector<int>>& stones) {
         int n = stones.size(); // number of stoens;
 
-        vector<bool>visited(n,false);
+        vector<bool>visited(n,false); // We will use the index , to mark the stones present on the vector given.
         int groups = 0 ;
         for(int i = 0 ; i <n ;i++)
         {   
