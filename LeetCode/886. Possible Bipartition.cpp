@@ -8,8 +8,8 @@ public:
         vector<int>visited(n+1,-1);
         for(auto it : dislikes)
         {
-            adj[it[0]].push_back(it[1]);
-            adj[it[1]].push_back(it[0]);
+            adj[it[0]].push_back(it[1]); // a hates b
+            adj[it[1]].push_back(it[0]); // b also hates a 
         }
 
         for (int i = 1; i <= n; ++i) // check for the disconnected components
